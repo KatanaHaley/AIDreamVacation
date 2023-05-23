@@ -80,7 +80,7 @@ const callGenerateEndpoint = async () => {
       )}
         </div>
       </div>
-      <Instagram />
+      {/* <Instagram /> */}
 
     </div>
   );
