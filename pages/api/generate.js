@@ -1,7 +1,7 @@
 import { Configuration, OpenAIApi } from 'openai';
-import * as dotenv from 'dotenv';
+// import * as dotenv from 'dotenv';
 
-dotenv.config();
+// dotenv.config();
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -21,7 +21,7 @@ const generateAction = async (req, res) => {
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
 
   const baseCompletion = await openai.createCompletion({
-    model: 'text-davinci-003',
+    // model: 'text-davinci-003',
     prompt: `${basePromptPrefix}${req.body.userInput}`,
     temperature: 0.9,
     max_tokens: 900,
