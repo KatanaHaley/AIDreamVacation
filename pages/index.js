@@ -3,7 +3,7 @@ import Image from 'next/image';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 import { useState } from 'react';
 import SiteMarquee from '../components/SiteMarquee';
-import Instagram from '../components/Instagram';
+// import Instagram from '../components/Instagram';
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
@@ -40,7 +40,7 @@ const callGenerateEndpoint = async () => {
     <div className="root">
       <div className="container">
       <SiteMarquee />
-      <Instagram />
+      {/* <Instagram /> */}
 
         <div className="header">
           <div className="header-title">
