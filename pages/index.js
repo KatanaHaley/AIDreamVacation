@@ -29,9 +29,9 @@ const callGenerateEndpoint = async () => {
   });
 
   const data = await response.json();
-  console.log(data)
+  // console.log(data)
   const { output } = data;
-  console.log("OpenAI replied...", output.text)
+  // console.log("OpenAI replied...", output.text)
 
   setApiOutput(`${output.text}`);
   setIsGenerating(false);
