@@ -16,7 +16,7 @@ Vacation secrets: Suggest locations that are well-loved by locals for years and 
 
 const generateAction = async (req, res) => {
   // Run first prompt
-  console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
+  // console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
 
   const baseCompletion = await openai.createCompletion({
     model: 'text-davinci-003',
@@ -28,6 +28,7 @@ const generateAction = async (req, res) => {
   const basePromptOutput = baseCompletion.data.choices.pop();
 
   res.status(200).json({ output: basePromptOutput });
+  // console.log(res)
 };
 
 export default generateAction;;
