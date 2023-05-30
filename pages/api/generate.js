@@ -1,7 +1,4 @@
 import { Configuration, OpenAIApi } from 'openai';
-import * as dotenv from 'dotenv';
-
-dotenv.config();
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -16,21 +13,21 @@ Destination:
 Popular tourist locations: Offer the most popular locations that tourists visit
 Vacation secrets: Suggest locations that are well-loved by locals for years and that many people don't know about.\n
 `;
+
 const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
 
   const baseCompletion = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: `${basePromptPrefix}${req.body.userInput}`,
+    prompt: `${basePromptPrefix}${req.body.userInput}\n`,
     temperature: 0.9,
     max_tokens: 900,
   });
   
   const basePromptOutput = baseCompletion.data.choices.pop();
 
-//   console.log(basePromptOutput) -
   res.status(200).json({ output: basePromptOutput });
 };
 
-export default generateAction;
+export default generateAction;;
